@@ -1,0 +1,12 @@
+{
+    "header_color": "#3366cc",
+    "time_color": "#99ccff",
+    "mainframe_color": "#264d73",
+
+    "card_label_font": ["Arial", 20, "bold"],
+    "card_desc_font": ["Arial", 14],
+    "card_main_color": "#140033",
+    "card_secondary_color": "white",
+    "card_done": "green",
+    "card_in_progress": "red"
+}
