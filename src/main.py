@@ -1,6 +1,6 @@
 import customtkinter as ctk
 from datetime import datetime
-import tech_funcs
+import core.tech_funcs as tech_funcs
 from home_frame import HomePage
 
 class MainWindow():

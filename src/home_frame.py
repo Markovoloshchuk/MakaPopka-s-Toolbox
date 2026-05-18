@@ -1,6 +1,6 @@
 import customtkinter as ctk
 from base_frame import BasePage
-import tech_funcs
+import core.tech_funcs as tech_funcs
 
 class HomePage(BasePage):
     def __init__(self, master, config):
@@ -35,6 +35,7 @@ class HomePage(BasePage):
             card_color = self.config["card_in_progress"]
         else:
             card_color = self.config["card_done"]
+        
         
         card = ctk.CTkFrame(
             master, 

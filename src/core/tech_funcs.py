@@ -1,9 +1,12 @@
 import json
+from pathlib import Path
 import os
 
+current_file = Path(__file__).resolve()
+project_root = current_file.parent.parent.parent
+config_path = project_root / "config" / "config.json"
+
 def load_config():
-    config_path = 'config.json'
-    
     default_config = {
         "header_color": "#1f538d",    # Темно-синій (стандарт CTK)
         "mainframe_color": "#2b2b2b", # Темно-сірий

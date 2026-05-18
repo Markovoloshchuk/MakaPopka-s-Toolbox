@@ -1,0 +1,17 @@
+possible_structure
+__pycache__/
+*.py[cod]
+*$py.class
+
+venv/
+.venv/
+env/
+
+.vscode/
+.idea/
+
+.env
+secret_keys.json
+
+*.log
+tmp/

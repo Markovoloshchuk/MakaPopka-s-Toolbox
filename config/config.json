@@ -5,8 +5,8 @@
 
     "card_label_font": ["Arial", 20, "bold"],
     "card_desc_font": ["Arial", 14],
-    "card_main_color": "#140033",
+    "card_main_color": "#3960ac",
     "card_secondary_color": "white",
-    "card_done": "green",
-    "card_in_progress": "red"
+    "card_done": "#24a887",
+    "card_in_progress": "#fb6a6a"
 }
