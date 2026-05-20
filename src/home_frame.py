@@ -1,21 +1,26 @@
 import customtkinter as ctk
-from base_frame import BasePage
 import core.tech_funcs as tech_funcs
 
+from base_frame import BasePage
+from features.converter.view.converter_menu import ConverterMenuPage
+
 class HomePage(BasePage):
-    def __init__(self, master, config):
+    def __init__(self, parrent, controller, config, title="Home Page", navigation_back=False):
         super().__init__(
-            master, 
-            config, title="Home Page")
-        self.config = tech_funcs.load_config()
-        
+            master=parrent,
+            config=config,
+            controller=controller,
+            title=title,
+            navigation_back=navigation_back)
+        # self.navigation_back=navigation_back
+        # self.config = config,
+        # self.controller = controller
+        # self.title = title
+
         self.build_widgets()
         self.build_cards()
     
-    def build_widgets(self):
-        self.label = ctk.CTkLabel(self, text="Home page dayo")
-        self.label.pack()
-        
+    def build_widgets(self):        
         self.item_frame = ctk.CTkFrame(self, width=1000, fg_color=self.config["mainframe_color"])
         # self.item_frame.grid_propagate(False)
         self.item_frame.pack(fill="both", padx=20)
@@ -61,7 +66,6 @@ class HomePage(BasePage):
             wraplength=280,
             justify="left",
             anchor="w"
-            
         )
         label_desc.pack(pady=(5, 10), padx=15, anchor="w")
         
@@ -72,8 +76,8 @@ class HomePage(BasePage):
         
     def build_cards(self):
         data = [
-            ("Media Convertion", "Formats: \n - .png -> .jpg\n - .png -> .bin\n - .bin -> .png\n - .mvp -> .mp4\n - .mkv -> .mp4 \nChange media size (res, bitrate, upscale, etc.).", lambda t="Convertion":self.on_card_click(t), True),
-            ("Cipher", "Coding vatious data using DES, AES, SHA-250, etc.", self.on_card_click, True),
+            ("Media Convertion", "Formats: \n - .png -> .jpg\n - .png -> .bin\n - .bin -> .png\n - .mvp -> .mp4\n - .mkv -> .mp4 \nChange media size (res, bitrate, upscale, etc.).", lambda:self.controller.switch_container(ConverterMenuPage), True),
+            ("Cipher", "Coding vatious data using DES, AES, SHA-250, etc.", lambda t="Cipher":self.on_card_click(t), True),
             ("Zip viewer", "Most obscure one. Used to view media on zip files, including mangas.", self.on_card_click, True),
             ("Mini Game", "Didn't make up my mind of what exactly there should be.", self.on_card_click, True),
             ("Drawing", "Simple drawing program with ability to post results on makaboard or export in various formats.", self.on_card_click, True),

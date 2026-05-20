@@ -2,6 +2,12 @@
     "header_color": "#3366cc",
     "time_color": "#99ccff",
     "mainframe_color": "#264d73",
+    "sidebar_color": "#2d5986",
+    "sidebar_btn_font": ["Arial", 20],
+    "sidebar_btn_main_color": "#3960ac",
+    "sidebar_btn_secondary_color": "white",
+
+    "general_title_font": ["Arial", 28, "bold"],
 
     "card_label_font": ["Arial", 20, "bold"],
     "card_desc_font": ["Arial", 14],

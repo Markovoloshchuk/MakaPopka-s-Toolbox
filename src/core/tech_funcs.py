@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 import os
+from PIL import Image
 
 current_file = Path(__file__).resolve()
 project_root = current_file.parent.parent.parent
@@ -23,3 +24,15 @@ def load_config():
     except (json.JSONDecodeError, Exception) as e:
         print(f"Помилка при читанні конфігу: {e}")
         return default_config
+
+def get_image_format(path):
+    try:
+        with Image.open(path) as img:
+            print(f"Формат: {img.format}")           # Напр. 'JPEG', 'PNG', 'WEBP'
+            print(f"Опис: {img.format_description}") # Більш детально
+            print(f"Режим кольору: {img.mode}")      # RGB, RGBA, L (чорно-білий)
+            return img.format
+    except IOError:
+        print("Це не зображення або файл пошкоджено.")
+
+get_image_format('test_file.dat')
